@@ -13,6 +13,15 @@ body {
   font-family: 'Dosis', sans-serif;
 }
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
 /* header start */
 ul {
   list-style-type: none;
@@ -72,17 +81,21 @@ a {
   text-align: center;
   margin: 0 10rem;
 }
-.filter {
+.filter form {
+  padding: 0 0.3rem;
+  color: black;
+}
+.filter form ul{
   display: flex;
   justify-content: center;
   padding: 1rem 0;
 }
-.filter div:hover {
-  color: #f9f6ee;
+.filter form ul li button {
+  font-size: 1.5rem;
+  padding: 1rem;
 }
-.filter div {
-  padding: 0 0.3rem;
-  color: black;
+.filter form ul li button:hover {
+  color: #f9f6ee;
 }
 .in-container {
   display: grid;

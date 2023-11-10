@@ -5,12 +5,17 @@ def index(request):
     return render(request, 'core/index.html')
 
 def characters(request):
-    characters = Character.objects.all().order_by('-rarity', 'name')
     elements = Element.objects.all()
+    query_element = request.GET.get('element')
+
+    if not query_element:
+        characters = Character.objects.all().order_by('-rarity', 'name')
+    else:
+        characters = Character.objects.order_by('-rarity', 'name').filter(element=query_element)
 
     return render(request, 'core/characters.html', {
         'characters': characters,
-        'elements': elements
+        'elements': elements,
     })
 
 def character_detail(request, pk):
