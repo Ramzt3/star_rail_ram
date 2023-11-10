@@ -4,13 +4,36 @@
 
 {% block headline %}<h1>Characters</h1>{% endblock %}
 
+
 {% block content %}
-  <div class="in-container">
+<div class="filter">
+  {% for element in elements %}
+  <div>
+    <a href="#">
+      <div>
+        <h3>{{ element.name }}</h3>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="in-container">
   {% if not characters %}
     <h1>No Character Found</h1>
   {% else %}
     {% for char in characters %}
-      {{ char }}
+      <div class="item">
+      <a href="{% url 'character_detail' char.id %}">  
+          <div>
+            <h2>{{ char.name }}</h2>
+          </div>
+          <div>
+            <p>Element: {{ char.element }}</p>
+            <p>Path: {{ char.path }}</p>
+          </div>
+        </a>
+      </div>
     {% endfor %}
   {% endif %}
   </div>

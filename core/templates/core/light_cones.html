@@ -1,0 +1,27 @@
+{% extends 'core/base.html'%}
+
+{% block title %}Light Cones{% endblock %}
+
+{% block headline %}<h1>Light Cones</h1>{% endblock %}
+
+{% block content %}
+  <div class="in-container">
+  {% if not light_cones %}
+    <h1>No Light Cones Found</h1>
+  {% else %}
+    {% for lc in light_cones %}
+      <div class="item">
+        <a href="{% url 'light_cone_detail' lc.id %}">  
+          <div>
+            <h2>{{ lc.name }}</h2>
+          </div>
+          <div>
+            <p>Element: {{ lc.element }}</p>
+            <p>Path: {{ lc.path }}</p>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+{% endblock %}

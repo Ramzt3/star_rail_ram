@@ -28,3 +28,13 @@ class Character(models.Model):
 
     def __str__(self):
         return self.name
+
+class LightCone(models.Model):
+    name = models.CharField(max_length=100)
+    rarity = models.IntegerField()
+    path = models.ForeignKey(Path, related_name='light_cones', on_delete=models.CASCADE)
+    element = models.ForeignKey(Element, related_name='light_cones', on_delete=models.CASCADE)
+    craeted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
