@@ -25,12 +25,18 @@ def character_detail(request, pk):
         'character': character
     })
 
-    return render
 def light_cones(request):
-    light_cones = LightCone.objects.all()
+    elements = Element.objects.all()
+    query_element = request.GET.get('element')
+
+    if not query_element:
+        light_cones = LightCone.objects.all()
+    else:
+        light_cones = LightCone.objects.filter(element=query_element)
 
     return render(request, 'core/light_cones.html', {
-        'light_cones': light_cones
+        'light_cones': light_cones,
+        'elements': elements
     })
 
 def light_cone_detail(request, pk):

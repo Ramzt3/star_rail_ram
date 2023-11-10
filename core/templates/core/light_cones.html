@@ -5,6 +5,17 @@
 {% block headline %}<h1>Light Cones</h1>{% endblock %}
 
 {% block content %}
+<div class="filter">
+  <form method="GET">
+    <ul>
+      {% for element in elements %}
+      <li>
+        <button name="element" value="{{ element.id }}">{{ element }}</button>
+      </li>
+      {% endfor %}
+    </ul>
+  </form>
+</div>
   <div class="in-container">
   {% if not light_cones %}
     <h1>No Light Cones Found</h1>
