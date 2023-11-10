@@ -2,11 +2,16 @@
 
 {% block title %}Characters{% endblock %}
 
+{% block headline %}<h1>Characters</h1>{% endblock %}
+
 {% block content %}
-<div>
-  <h1>Characters</h1>
-  {% for char in characters %}
-  {{ char }}
-  {% endfor %}
-</div>
+  <div class="in-container">
+  {% if not characters %}
+    <h1>No Character Found</h1>
+  {% else %}
+    {% for char in characters %}
+      {{ char }}
+    {% endfor %}
+  {% endif %}
+  </div>
 {% endblock %}

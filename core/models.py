@@ -5,7 +5,6 @@ class Element(models.Model):
 
     class Meta:
         ordering = ("name",)
-        verbose_name_plural = "Elements"
 
     def __str__(self):
         return self.name
@@ -15,7 +14,6 @@ class Path(models.Model):
 
     class Meta:
         ordering = ("name",)
-        verbose_name_plural = "Paths"
 
     def __str__(self):
         return self.name
