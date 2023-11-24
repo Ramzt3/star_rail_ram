@@ -1,8 +1,10 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Character, LightCone, Element
 
+
 def index(request):
     return render(request, 'core/index.html')
+
 
 def characters(request):
     elements = Element.objects.all()
@@ -18,12 +20,14 @@ def characters(request):
         'elements': elements,
     })
 
+
 def character_detail(request, pk):
     character = get_object_or_404(Character, pk=pk) 
 
     return render(request, 'core/character_detail.html', {
         'character': character
     })
+
 
 def light_cones(request):
     elements = Element.objects.all()
@@ -38,6 +42,7 @@ def light_cones(request):
         'light_cones': light_cones,
         'elements': elements
     })
+
 
 def light_cone_detail(request, pk):
     light_cone = get_object_or_404(LightCone, pk=pk) 
