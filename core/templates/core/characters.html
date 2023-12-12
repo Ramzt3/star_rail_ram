@@ -12,6 +12,8 @@
       {% for element in elements %}
       <li>
         <button name="element" value="{{ element.id }}">{{ element }}</button>
+        <!-- <input type="checkbox" id="{{ element.id }}" name="element" value="{{ element }}"> -->
+        <!-- <label for="{{ element.id }}">{{ element }}</label> -->
       </li>
       {% endfor %}
     </ul>
@@ -23,17 +25,15 @@
     <h1>No Character Found</h1>
   {% else %}
     {% for char in characters %}
-      <div class="item">
-      <a href="{% url 'character_detail' char.id %}">  
-          <div>
+      <a class="item" href="{% url 'character_detail' char.id %}">
+          <div class="item-top">
             <h2>{{ char.name }}</h2>
           </div>
-          <div>
+          <div class="item-bottom">
             <p>Element: {{ char.element }}</p>
             <p>Path: {{ char.path }}</p>
           </div>
-        </a>
-      </div>
+      </a>
     {% endfor %}
   {% endif %}
   </div>

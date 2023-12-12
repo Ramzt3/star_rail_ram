@@ -1,6 +1,12 @@
 from django import forms
-from .models import Element
 
-# class ChoiceNow(forms.Form):
-#     ele = Element.objects.all()
-#     element = forms.ChoiceField(choices=ele)
+from django.contrib.auth.forms import AuthenticationForm
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'username'
+    }))
+    password = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'password'
+    }))

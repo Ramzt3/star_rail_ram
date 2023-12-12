@@ -22,7 +22,7 @@ def characters(request):
 
 
 def character_detail(request, pk):
-    character = get_object_or_404(Character, pk=pk) 
+    character = get_object_or_404(Character, pk=pk)
 
     return render(request, 'core/character_detail.html', {
         'character': character
@@ -45,8 +45,8 @@ def light_cones(request):
 
 
 def light_cone_detail(request, pk):
-    light_cone = get_object_or_404(LightCone, pk=pk) 
+    light_cone = get_object_or_404(LightCone, pk=pk)
 
     return render(request, 'core/light_cone_detail.html', {
-        'light_cone': light_cone 
+        'light_cone': light_cone
     })

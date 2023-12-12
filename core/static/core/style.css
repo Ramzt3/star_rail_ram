@@ -107,8 +107,7 @@ a {
 
 .item {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 12rem;
   border: 1px solid transparent;
@@ -119,6 +118,6 @@ a {
   color: #808080;
   border: 1px solid white;
 }
-.item a div {
+.item div {
   color: black;
 }
