@@ -1,0 +1,8 @@
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=star_rail_ram-db
+DB_USER=postgres
+DB_PASSWORD=000001
+DB_HOST=localhost
+DB_PORT=5432
+
+SECRET_KEY=django-insecure-(u##qi1nca32tg*6*whvp$kg#2vxr#2n8fuy$ijj(g$6e6_@u2
