@@ -2,7 +2,11 @@
 
 {% block title %}{{ character.name }}{% endblock %}
 
-{% block headline %}<h1>{{ character.name }}</h1>{% endblock %}
+{% block headline %}<h1>{{ character.name }}</h1>
+
+{{ character.element }}
+
+{% endblock %}
 
 {% block content %}
 {% endblock %}
