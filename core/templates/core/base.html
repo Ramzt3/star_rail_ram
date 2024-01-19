@@ -8,16 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
-    <link href="{% static 'core/style.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
   </head>
   <body>
-    {% include 'core/header.html' %}
-    <div class="main">
-      <div class="container">
-      {% block headline %}{% endblock %}
-      {% block content %}
-      {% endblock %}
-      </div>
-    </div>
+    {% include 'layouts/header.html' %}
+    <!-- {% block headline %}{% endblock %} -->
+    {% block content %}
+    {% endblock %}
   </body>
 </html>

@@ -16,13 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core.views import index, characters, light_cones, character_detail, light_cone_detail
 
 urlpatterns = [
     path('', include('core.urls')),
-    path('characters/', characters, name='characters'),
-    path('characters/<int:pk>', character_detail, name='character_detail'),
-    path('light_cones/', light_cones, name='light_cones'),
-    path('light_cones/<int:pk>', light_cone_detail, name='light_cone_detail'),
     path('admin/', admin.site.urls),
 ]
