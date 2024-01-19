@@ -22,7 +22,7 @@
   {% else %}
     {% for lc in light_cones %}
       <div class="item">
-        <a href="{% url 'light_cone_detail' lc.id %}">  
+        <a href="{% url 'core:light_cone_detail' lc.id %}">  
           <div>
             <h2>{{ lc.name }}</h2>
           </div>

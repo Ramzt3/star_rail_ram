@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Character, LightCone, Element
+from .models import Character, LightCone, Element, Path
 
 
 def index(request):
@@ -8,6 +8,7 @@ def index(request):
 
 def characters(request):
     elements = Element.objects.all()
+    paths = Path.objects.all()
     query_element = request.GET.get('element')
 
     if not query_element:
@@ -18,6 +19,7 @@ def characters(request):
     return render(request, 'core/characters.html', {
         'characters': characters,
         'elements': elements,
+        'paths': paths
     })
 
 
