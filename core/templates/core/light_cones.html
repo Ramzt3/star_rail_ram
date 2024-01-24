@@ -5,34 +5,47 @@
 {% block headline %}<h1>Light Cones</h1>{% endblock %}
 
 {% block content %}
-<div class="filter">
-  <form method="GET">
-    <ul>
-      {% for element in elements %}
-      <li>
-        <button name="element" value="{{ element.id }}">{{ element }}</button>
-      </li>
-      {% endfor %}
-    </ul>
-  </form>
+<div class="w3-container w3-center">
+<h1>Light Cones</h1>
+      <div class="w3-section w3-padding-16">
+      <form>
+        <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+        <span class="w3-margin-right">Filter:</span> 
+        <!-- <button class="w3-button w3-teal w3-round-large" value="">ALL</button> -->
+        <form class="filter-form">
+        {% for element in elements %}
+          <!-- <button class="w3-button w3-teal w3-round-large" name="element" value="{{ element.id }}">{{ element }}</button> -->
+          <label class="w3-button w3-round-large">
+            <input type="checkbox" id="{{ element.id }}" name="element" value="{{ element }}" placeholder="ok" onclick="multiCheckbox()">
+            {{ element }}
+          </label>
+        {% endfor %}
+        </form>
+        </form>
+    </div>
 </div>
-  <div class="in-container">
+
+<div class="w3-container w3-center" id="card-list">
   {% if not light_cones %}
-    <h1>No Light Cones Found</h1>
+    <h1>No Light Cone Found</h1>
   {% else %}
+    <div class="w3-row-padding">
     {% for lc in light_cones %}
-      <div class="item">
-        <a href="{% url 'core:light_cone_detail' lc.id %}">  
-          <div>
-            <h2>{{ lc.name }}</h2>
+    <div class="w3-quarter">
+      <div class="card w3-card w3-white w3-hover-shadow w3-center w3-round-large w3-margin-bottom">
+        <a href="{% url 'core:light_cone_detail' lc.id %}">
+          <div class="w3-container card-body">
+            <h3 class="card-title">{{ lc.name }}</h3>
           </div>
-          <div>
-            <p>Element: {{ lc.element }}</p>
-            <p>Path: {{ lc.path }}</p>
+          <div class="w3-container">
+            <p class="card-element">{{ lc.element }}</p>
+            <p class="card-path">{{ lc.path }}</p>
           </div>
         </a>
       </div>
+    </div>
     {% endfor %}
+    </div>
   {% endif %}
-  </div>
+</div>
 {% endblock %}

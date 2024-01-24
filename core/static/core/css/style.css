@@ -1,5 +1,5 @@
 body {
-  font-family: 'Dosis', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 ul {
@@ -7,9 +7,4 @@ ul {
 }
 a {
   text-decoration: none;
-}
-
-.card {
-  height: 11rem;
-
 }

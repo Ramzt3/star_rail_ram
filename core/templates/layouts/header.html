@@ -1,8 +1,25 @@
-<div class="w3-bar w3-teal w3-large">
-  <a href="{% url 'core:index' %}" class="w3-bar-item w3-button">Home</a>
-  <a href="{% url 'core:characters' %}" class="w3-bar-item w3-button">Characters</a>
-  <a href="{% url 'core:light_cones' %}" class="w3-bar-item w3-button">Light Cones</a>
-  <div class="w3-right">
-    <a href="#" class="w3-bar-item w3-button">Login</a>
+<!-- Navbar -->
+<div>
+  <div class="w3-bar w3-teal w3-card w3-xlarge">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="mbNav()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{% url 'core:index' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="{% url 'core:characters' %}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CHARACTER</a>
+    <a href="{% url 'core:light_cones' %}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LIGHT CONES</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
+      </div>
+    </div>
+    <a href="#" class="w3-padding-large w3-hover-red w3-hide-small w3-right">Login</a>
   </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-teal w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="{% url 'core:characters' %}" class="w3-bar-item w3-button w3-padding-large" onclick="mbNav()">CHARACTERS</a>
+  <a href="{% url 'core:light_cones' %}" class="w3-bar-item w3-button w3-padding-large" onclick="mbNav()">LIGHT CONES</a>
+  <a href="{% url 'core:characters' %}" class="w3-bar-item w3-button w3-padding-large" onclick="mbNav()">MERCH</a>
 </div>
