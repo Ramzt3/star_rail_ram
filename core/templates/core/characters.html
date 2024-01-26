@@ -19,6 +19,7 @@
           <label class="w3-button w3-round-large">
             <input type="checkbox" id="{{ element.id }}" name="element" value="{{ element }}" placeholder="ok" onclick="multiCheckbox()">
             {{ element }}
+            <img src="{{ element.icon }}">
           </label>
         {% endfor %}
         </form>

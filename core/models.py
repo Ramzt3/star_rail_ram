@@ -3,6 +3,7 @@ from django.db import models
 
 class Element(models.Model):
     name = models.CharField(max_length=30)
+    icon = models.ImageField(upload_to="media/icons/elements/" ,null=True, blank=True)
 
     class Meta:
         ordering = ("name",)
@@ -13,6 +14,7 @@ class Element(models.Model):
 
 class Path(models.Model):
     name = models.CharField(max_length=30)
+    icon = models.ImageField(upload_to="media/icons/paths/" ,null=True, blank=True)
 
     class Meta:
         ordering = ("name",)

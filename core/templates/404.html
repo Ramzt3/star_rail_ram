@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="w3-container w3-center">
+	<h1>Ops! This page is not found</h1>
+	<h3>
+		Go back to
+		<button class="w3-button w3-teal">
+			<a href="{% url 'core:index' %}">Home</a>
+		</button>
+	</h3>
+	
+</div>
+{% endblock %}
