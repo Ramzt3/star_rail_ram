@@ -5,6 +5,9 @@
 {% block content %}
 <div class="w3-container w3-center">
   <h1>The Front Page</h1>
+  {% if user.is_authenticated %}
+    <h3>Hello You are Logged in</h3>
+  {% endif %}
   <p>The w3-container class is an important w3.CSS class.</p>
 </div>
 {% endblock %}
