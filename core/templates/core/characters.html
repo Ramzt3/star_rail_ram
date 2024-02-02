@@ -6,20 +6,21 @@
 
 
 {% block content %}
+<div class="w3-auto">
 <div class="w3-container w3-center">
 <h1>Characters</h1>
       <div class="w3-section w3-padding-16">
       <form>
         <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
-        <span class="w3-margin-right">Filter:</span> 
+        <!-- <span class="w3-margin-right">Filter:</span>  -->
         <!-- <button class="w3-button w3-teal w3-round-large" value="">ALL</button> -->
         <form class="filter-form">
         {% for element in elements %}
           <!-- <button class="w3-button w3-teal w3-round-large" name="element" value="{{ element.id }}">{{ element }}</button> -->
           <label class="w3-button w3-round-large">
             <input type="checkbox" id="{{ element.id }}" name="element" value="{{ element }}" placeholder="ok" onclick="multiCheckbox()">
-            {{ element }}
-            <img src="{{ element.icon }}">
+            <!-- {{ element }} -->
+            <img src="{{ main_url }}/{{ element.icon }}" width="40" height="40">
           </label>
         {% endfor %}
         </form>
@@ -27,7 +28,7 @@
     </div>
 </div>
 
-<div class="w3-container w3-center" id="card-list">
+<div class="" id="card-list">
   {% if not characters %}
     <h1>No Character Found</h1>
   {% else %}
@@ -35,7 +36,7 @@
     {% for char in characters %}
     <div class="w3-quarter">
       <div class="card w3-card w3-white w3-hover-shadow w3-center w3-round-large w3-margin-bottom">
-        <a href="{% url 'core:character_detail' char.id %}">
+        <a href="{% url 'core:character-detail' char.id %}">
           <div class="w3-container card-body">
             <h3 class="card-title">{{ char.name }}</h3>
           </div>
@@ -49,5 +50,6 @@
     {% endfor %}
     </div>
   {% endif %}
+</div>
 </div>
 {% endblock %}

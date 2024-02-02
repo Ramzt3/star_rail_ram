@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Add Character{% endblock %}
+
+{% block content %}
+<div class="w3-content">
+  <h1>Add Character</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input class="w3-button w3-teal w3-round" type="submit" value="Add"/>
+  </form>
+</div>
+{% endblock %}

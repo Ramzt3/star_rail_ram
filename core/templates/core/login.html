@@ -2,18 +2,16 @@
 
 {% block title %}Login{% endblock %}
 
-{% block headline %}<h1>Login</h1>{% endblock %}
-
 {% block content %}
 
-<h1>Login</h1>
+<div class="w3-content">
+  <h1 class="w3-center">Login</h1>
 
-<form method="post" action".">
-  {% csrf_token %}
-  <label>Username</label>
-  {{ form.username }}
-  <label>Password</label>
-  {{ form.password }}
-  <button type="submit">Login</button>
-</form>
+  <form method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{ login_form.as_p }}
+    <input class="w3-btn w3-teal w3-round" type="submit" value="Login"/>
+
+  </form>
+</div>
 {% endblock %}

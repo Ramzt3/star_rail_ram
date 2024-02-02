@@ -1,12 +1,16 @@
 from django.urls import path
-from core.views import index, characters, light_cones, character_detail, light_cone_detail
+from core import views
 
 app_name = 'core'
 
 urlpatterns = [
-    path('', index, name='index'),
-    path('characters', characters, name='characters'),
-    path('characters/<int:pk>', character_detail, name='character_detail'),
-    path('light_cones/', light_cones, name='light_cones'),
-    path('light_cones/<int:pk>', light_cone_detail, name='light_cone_detail'),
+    path('', views.index, name='index'),
+    path('login/', views.my_login, name='login'),
+    path('register/', views.register, name='register'),
+    path('user-logout/', views.user_logout, name='user-logout'),
+    path('characters/', views.characters, name='characters'),
+    path('characters/new-character/', views.add_character, name='add-character'),
+    path('characters/<int:pk>/', views.character_detail, name='character-detail'),
+    path('light-cones/', views.light_cones, name='light-cones'),
+    path('light-cones/<int:pk>/', views.light_cone_detail, name='light-cone-detail'),
 ]
