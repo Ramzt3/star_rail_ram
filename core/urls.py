@@ -9,7 +9,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('user-logout/', views.user_logout, name='user-logout'),
     path('characters/', views.characters, name='characters'),
-    path('characters/new-character/', views.add_character, name='add-character'),
     path('characters/<int:pk>/', views.character_detail, name='character-detail'),
     path('light-cones/', views.light_cones, name='light-cones'),
     path('light-cones/<int:pk>/', views.light_cone_detail, name='light-cone-detail'),

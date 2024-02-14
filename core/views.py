@@ -1,8 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
 from .models import Character, LightCone, Element, Path
-from .forms import LoginForm, CreateUserForm, AddCharacterForm
+from .forms import LoginForm, CreateUserForm
 
 
 def bucket_url():
@@ -47,7 +46,7 @@ def my_login(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                auth.login(request, user)
+                login(request, user)
 
                 return redirect("core:index")
 
@@ -57,7 +56,7 @@ def my_login(request):
 
 
 def user_logout(request):
-    auth.logout(request)
+    logout(request)
 
     return redirect("core:index")
 
@@ -86,14 +85,6 @@ def character_detail(request, pk):
 
     return render(request, 'core/character_detail.html', {
         'character': character
-    })
-
-
-def add_character(request):
-    form = AddCharacterForm()
-
-    return render(request, 'core/add_character.html', {
-        'form': form
     })
 
 
