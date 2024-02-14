@@ -3,8 +3,10 @@
 {% block title%}Dashboard{% endblock %}
 
 {% block content %}
-<div class="w3-content">
+<div class="w3-content w3-center">
 	<h1>Dashboard</h1>
+	<a class="w3-button w3-teal w3-round" href="{% url 'dashboard:add-character' %}">Add Character</a>
+	<a class="w3-button w3-teal w3-round" href="{% url 'dashboard:add-light-cone' %}">Add Light Cone</a>
 	<p>Total Characters: {{ total_characters }}</p>
 	<p>Total Light Cones: {{ total_light_cones }}</p>
 </div>

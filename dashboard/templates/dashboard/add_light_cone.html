@@ -1,0 +1,12 @@
+{% extends 'core/base.html'%}
+
+{% block title %}Add Light Cone{% endblock %}
+
+{% block content %}
+<h1>Add Light Cone</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input class="w3-button w3-teal w3-round" type="submit" value="Add"/>
+</form>
+{% endblock %}
