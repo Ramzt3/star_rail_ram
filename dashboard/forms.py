@@ -11,4 +11,4 @@ class AddCharacterForm(ModelForm):
 class AddLightConeForm(ModelForm):
     class Meta:
         model = LightCone
-        fields = ["name", "rarity", "path", "element"]
+        fields = ["name", "rarity", "path"]
